@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="carrito.css" />
+    
+  </head>
+
+  <body>
+    <img src="./imagenes/abudeco.jpeg" class="rounded mx-auto d-block" alt="abudeco">
+    <nav class="navbar bg-body-tertiary ">
+      <div class="container-fluid">
+        <a class="navbar-brand pagination pagination-lg" href="#">
+          <i class="bi bi-cart4" id="mostrar_carrito"></i>
+         <strong>clic en carrito para ver tu compra</strong>
+        </a>
+      </div>
+    </nav>
+    <div id="contenedorPadre">      
+    <div class="container" id="listaProductos">
+        <h2>Nuestros Productos</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img src="./imagenes/Mantel03.jpeg" class="card-img-top" alt="manteles2">
+                <div class="card-body">
+                  <h5 class="card-title">Manteles</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <span class="precio">100</span>
+                  <a href="#" class="btn btn-success botonCompra">Agregar a carrito</a>
+                  </div>
+                
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="./imagenes/Servilleta.jpeg" class="card-img-top" alt="servilleta">
+                <div class="card-body">
+                  <h5 class="card-title">Servilletas</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <span class="precio">100</span>
+                  <a href="#" class="btn btn-success botonCompra">Agregar a carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="./imagenes/Repasadores.jpeg" class="card-img-top" alt="Repasadores">
+                <div class="card-body">
+                  <h5 class="card-title">Repasadores</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  <span class="precio">100</span>
+                  <a href="#" class="btn btn-success botonCompra">Agregar a carrito</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes/Pie de cama.jpeg" class="card-img-top" alt="manteles2">
+              <div class="card-body">
+                <h5 class="card-title">Pie de cama</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <span class="precio">100</span>
+                <a href="#" class="btn btn-success botonCompra">Agregar a carrito</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes/Mantelito.jpeg" class="card-img-top" alt="servilleta">
+              <div class="card-body">
+                <h5 class="card-title">Mantelitos</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <span class="precio">100</span>
+                <a href="#" class="btn btn-success botonCompra">Agregar a carrito</a>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+  <div class="container" id="carrito">
+      <h1>Carrito</h1>
+         <table class="table table-dark">
+           <thead id="drito">
+               <tr>
+                 <td></td>       
+                 <td>Producto</td>
+                 <td>Cantidad</td>
+                 <td>Precio</td>
+                 <td></td>             
+               </tr>
+            </thead>
+           <tbody id="tbody">
+           </tbody>
+         </table>
+  </div>
+    
+  
+    <script src="carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
