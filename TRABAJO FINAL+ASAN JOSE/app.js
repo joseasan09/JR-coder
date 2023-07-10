@@ -178,4 +178,79 @@ function hacerVisibleCarrito(){
 
 //api
 
+window.addEventListener('load' , ()=> {
+
+	let lon 
+	let lat
+	
+	let temperaturaValor = document.getElementById('temperatura-valor')
+	let temperaturaDescripcion = document.getElementById('temperatura-descripcion')
+
+	let ubicacion = document.getElementById('ubicacion')
+	let iconoAnimado = document.getElementById('icono-animado')
+
+	let vientoVelocidad = document.getElementById('viento-velocidad')
+
+	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition( posicion => {
+
+			lon = posicion.coords.longitude
+			lat = posicion.coords.latitude
+
+			const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=ddc069a031eddcfb2c1ca0cdc230536f`
+		
+		
+		fetch(url)
+			.then( response => { return response.json() })
+			.then( data => {
+				let kelvin = Math.round(data.main.temp)
+				let temp = Math.round(kelvin - 273.15);
+				temperaturaValor.textContent = `${temp} °c`
+
+				
+
+				ubicacion.textContent = data.name
+
+				vientoVelocidad.textContent = `${data.wind.speed} m/s`
+			
+			switch (data.weather[0].main) {
+				case 'Thunderstrom':
+					iconoAnimado.src='animated/thunder.svg'
+					console.log('TORMENTA');
+					break;
+				case 'Drizzel':
+					iconoAnimado.src='animated/rainy-2.svg'
+					console.log('LLOVIZNA');
+					break;
+				case 'Rain':
+					iconoAnimado.src='animated/rainy-7.svg'
+					console.log('LLUVIA');
+					break;
+				case 'Clear':
+					iconoAnimado.src='animated/day.svg'
+					console.log('LIMPIO');
+					break;
+				case 'Atmosphere':
+					iconoAnimado.src='animated/weather.svg'
+					console.log('ATMOSFERA');
+					break;
+				case 'Clouds':
+					iconoAnimado.src='animated/cloudy-day-1.svg'
+					console.log('NUBES');
+					break;
+				default:
+						iconoAnimado.src='animated/cloudy-day-1.svg'
+						console.log('por defecto');	
+
+					
+			}
+
+			})
+			.catch( error => {
+				console.log(error)
+			})	
+		  
+		})
+	}
+})
 
